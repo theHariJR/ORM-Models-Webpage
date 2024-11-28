@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Webpages_Topic Prefetch</h1>
+        <table border="3px">
+            <thead>
+                <tr>
+                    <th>pk/id</th>
+                    <th>Topic_name</th>
+                    <th>Name</th>
+                    <th>URL</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for TO in PWTO %}
+                    <tr>
+                        {% for WO in TO.webpage_set.all %}
+                            <tr>
+                                <td>{{WO.id}}</td>
+                                <td>{{TO.topic_name}}</td>
+                                <td>{{WO.name}}</td>
+                                <td>{{WO.url}}</td>
+                                <td>{{WO.email}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+</body>
+</html>

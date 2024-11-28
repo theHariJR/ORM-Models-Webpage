@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Webpages_Topic Prefetch</h1>
+        <table border="3px">
+            <thead>
+                <tr>
+                    <th>pk/id</th>
+                    <th>Topic_name</th>
+                    <th>Name</th>
+                    <th>URL</th>
+                    <th>Email</th>
+                    <th>Author</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for WO in PWAO %}
+                    <tr>
+                        {% for AO in WO.accessrecord_set.all %}
+                            <tr>
+                                <td>{{AO.id}}</td>
+                                <td>{{WO.topic_name}}</td>
+                                <td>{{WO.name}}</td>
+                                <td>{{WO.url}}</td>
+                                <td>{{WO.email}}</td>
+                                <td>{{AO.author}}</td>
+                                <td>{{AO.date}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+</body>
+</html>

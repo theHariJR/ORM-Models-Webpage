@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Webpage Data Insertion Form</h1>
+        <form action="" method="post">
+            <label for="topic">Select Topic</label>
+            <select name="topic" id="topic">
+                {% for v in TO %}
+                    <option value="{{v.topic_name}}">{{v.topic_name}}</option>
+                {% endfor %}
+            </select><br>
+            <label for="name">Enter Name</label>
+            <input type="text" name="name" id="name"><br>
+            <label for="url">Enter url</label>
+            <input type="url" name="url" id="url"><br>
+            <label for="email">Enter E-mail id</label>
+            <input type="email" name="email" id="email"><br>
+        </form>
+    </center>
+</body>
+</html>
